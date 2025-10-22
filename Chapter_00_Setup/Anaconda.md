@@ -4,7 +4,7 @@
 
 > ❗️ **黄金法则：** 在Python项目中，我们常说：“**环境配好了，问题就解决了一大半**。”
 >
-> 永远不要在你的“全局环境”中安装任何东西！
+> 不要把所有包都下载在“全局环境”中！
 
 ### 1. 为什么你需要“虚拟环境”？
 
@@ -30,7 +30,8 @@
 
 * **IDE (代码编辑器):** 一个好的编辑器能极大提升效率。
     * **[VS Code](https://code.visualstudio.com/) (推荐):** 微软出品，轻量、免费、插件生态无敌。
-    * **[PyCharm](https://www.jetbrains.com/pycharm/) (备选):** 功能强大，对大型项目管理非常友好。
+    * **[PyCharm](https://www.jetbrains.com/pycharm/) (备选):** 功能强大，对大型项目管理非常友好，可以去jetbrains申请学生优惠。
+    * **🔗 [jetbrains学生认证](https://blog.csdn.net/m0_63451989/article/details/131743070)**
 * **编译器:** 在本Python教程中，你**不需要**关心C++编译器，Anaconda和pip会帮你处理好一切。
 
 ### 4. ⚡ 本教程的“标准起手式”
@@ -48,8 +49,4 @@ conda activate a-cv
 # 3. 在这个干净的环境中，安装本教程需要的核心库
 #    (你会发现提示符的前面多了 (a-cv) 字样，表示你已成功进入)
 pip install opencv-python
-pip install numpy
-pip install matplotlib
 
-# 4. (可选) 安装Jupyter Notebook，方便做笔记和测试
-pip install jupyter
