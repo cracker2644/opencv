@@ -1,1 +1,55 @@
+## 🚀 第0章：环境搭建与前置知识
 
+这是整个教程中最重要的一章。我们将搭建一个**独立、干净、可复现**的开发环境。
+
+> ❗️ **黄金法则：** 在Python项目中，我们常说：“**环境配好了，问题就解决了一大半**。”
+>
+> 永远不要在你的“全局环境”中安装任何东西！
+
+### 1. 为什么你需要“虚拟环境”？
+
+在你刚安装好Python时，你的电脑上只有一个“全局环境”。如果你把所有项目的库（package）都装在这里，很快就会遇到灾难：
+
+* `🚨 **版本冲突**：` 你的A项目需要 `opencv 4.5`，但你的B项目（或者你下载的别人的代码）却需要 `opencv 3.4`。它们会互相覆盖，导致一个项目彻底崩溃。
+* `🚧 **依赖地狱**：` A项目依赖 `numpy 1.20`，B项目依赖 `numpy 1.18`。
+* `📦 **环境臃肿**：` 你的全局环境装了几百个包，你根本不知道哪些是A项目真正需要的。
+* `🔁 **无法复现**：` 当你把代码发给别人时，你无法保证他们的环境和你一样，导致你的代码在他们电脑上跑不起来。
+
+**“虚拟环境”就是你的“项目隔离舱”。**
+
+它为你**的每一个项目**都创建一个“干净的房间”（隔离环境）。你在A房间里装的任何东西，都只属于A，B房间完全看不到，它们之间**互不干扰**。
+
+### 2. 终极工具：Anaconda
+
+[**Anaconda**](https://www.anaconda.com/download) 是目前最强大、最流行的Python环境和包管理工具，尤其是在数据科学和计算机视觉领域。它能帮你完美地管理上述的“隔离舱”。
+
+* **🔗 [Anaconda 下载与安装指南 (CSDN)](https://blog.csdn.net/lulukanshijie/article/details/150028587)**
+* **🔗 [Anaconda 常用命令与环境管理 (CSDN)](https://blog.csdn.net/u011385476/article/details/105277426)**
+
+### 3. 你的“开发武器” (IDE)
+
+* **IDE (代码编辑器):** 一个好的编辑器能极大提升效率。
+    * **[VS Code](https://code.visualstudio.com/) (推荐):** 微软出品，轻量、免费、插件生态无敌。
+    * **[PyCharm](https://www.jetbrains.com/pycharm/) (备选):** 功能强大，对大型项目管理非常友好。
+* **编译器:** 在本Python教程中，你**不需要**关心C++编译器，Anaconda和pip会帮你处理好一切。
+
+### 4. ⚡ 本教程的“标准起手式”
+
+请（在安装好Anaconda后）打开你的终端（推荐使用 Git Bash 或 Anaconda Prompt），然后执行以下命令，为本教程创建专属环境：
+
+```bash
+# 1. 创建一个名为 "a-cv" (Anaconda-CV) 的新环境
+#    我们同时指定 Python 版本为 3.9
+conda create -n a-cv python=3.9
+
+# 2. 激活这个环境（“进入你的专属房间”）
+conda activate a-cv
+
+# 3. 在这个干净的环境中，安装本教程需要的核心库
+#    (你会发现提示符的前面多了 (a-cv) 字样，表示你已成功进入)
+pip install opencv-python
+pip install numpy
+pip install matplotlib
+
+# 4. (可选) 安装Jupyter Notebook，方便做笔记和测试
+pip install jupyter
